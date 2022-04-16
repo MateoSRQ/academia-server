@@ -23,3 +23,15 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async () => {
   return { hello: 'world' }
 })
+
+// Usuarios
+Route.get('/api/v1/usuarios', 'UsuariosController.index');
+Route.post('/api/v1/usuarios', 'UsuariosController.store');
+
+// Roles
+Route.get('/api/v1/roles', 'RolsController.index');
+Route.post('/api/v1/roles', 'RolsController.store');
+
+// Auth
+Route.post('/api/v1/login', 'AuthController.login');
+Route.post('/api/v1/get_token', 'AuthController.getToken');

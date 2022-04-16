@@ -6,13 +6,11 @@ export default class UsuarioSchema extends BaseSchema {
   public async up() {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id').primary()
-      table.string('email', 255).notNullable()
+      table.string('username', 100).unique().notNullable()
+      table.integer('rol_id').unsigned().references('id').inTable('rol').onDelete('NO ACTION')
+      table.string('email', 100).unique().notNullable()
       table.string('password', 180).notNullable()
       table.string('remember_me_token').nullable()
-
-      /**
-       * Uses timestampz for PostgreSQL and DATETIME2 for MSSQL
-       */
       table.timestamp('created_at', { useTz: true }).notNullable()
       table.timestamp('updated_at', { useTz: true }).notNullable()
     })
