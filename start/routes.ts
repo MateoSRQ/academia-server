@@ -35,3 +35,12 @@ Route.post('/api/v1/roles', 'RolsController.store');
 // Auth
 Route.post('/api/v1/login', 'AuthController.login');
 Route.post('/api/v1/get_token', 'AuthController.getToken');
+
+// ProcesoAdmision
+Route.get('/api/v1/admisiones', 'ProcesoAdmisionsController.index');
+Route.post('/api/v1/admisiones', 'ProcesoAdmisionsController.store');
+
+// Alumno
+Route.get('/api/v1/alumnos', 'AlumnosController.index');
+Route.post('/api/v1/alumnos', 'AlumnosController.store');
+

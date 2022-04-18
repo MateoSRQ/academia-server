@@ -23,7 +23,7 @@ export default class Persona extends BaseModel {
   public documento_tipo: string
 
   @column()
-  public documento_numero: string
+  public documento_nro: string
 
   @column()
   public correo_electronico_1: string

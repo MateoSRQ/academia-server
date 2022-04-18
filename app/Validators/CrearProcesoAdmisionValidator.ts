@@ -15,9 +15,9 @@ export default class CrearProcesoAdmisionValidator {
       rules.unique({table: 'proceso_admision', column: 'nombre'}),
       rules.maxLength(100)
     ]),
-    fecha_inicio: schema.string({}, [
+    fecha_inicio: schema.date({}, [
       rules.required(),
-      rules.afterOrEqualToField(Date.now().toString())
+      rules.afterOrEqual("today")
     ]),
   })
   public messages = {
@@ -28,7 +28,7 @@ export default class CrearProcesoAdmisionValidator {
     'nombre.unique':                      'Se requiere un nombre de proceso de admisión distinto',
     'nombre.maxLength':                   'Se requiere un nombre de un tamaño menor o igual a 100 caracteres',
     'fecha_inicio.required':              'Se requiere una fecha de inicio de proceso de admisión',
-    'fecha_inicio.afterOrEqualToField':   'Se requiere una fecha de inicio igual o posterior a hoy',
+    'fecha_inicio.afterOrEqual':          'Se requiere una fecha de inicio igual o posterior a hoy',
 
   }
 }

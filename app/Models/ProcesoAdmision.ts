@@ -7,6 +7,15 @@ export default class ProcesoAdmision extends BaseModel {
   @column({ isPrimary: true })
   public id: number
 
+  @column({})
+  public codigo:string
+
+  @column({})
+  public nombre:string
+
+  @column({})
+  public fecha_inicio:Date
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 
